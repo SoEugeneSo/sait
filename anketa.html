@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniLane</title>
+    <link rel="icon" href="anilane.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="buy.css">
+    <link rel="stylesheet" href="phone.css">
+    <link rel="stylesheet" href="anketa.css">
+    
+    <title>AniLane Озвучка</title>
+    <script src="mainpage.js"></script>
+    <script src="burgermenu.js"></script>
+    <script src="anketa.js"></script>
+    <script src="numb.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="mainpage.html">
+                <img src="anilane.jpg" alt="Логотип">
+            </a>
+        </div>
+        <div class="music-controls">
+            <img id="playImg" class="control-icon" src="play.png" alt="Play">
+            <img id="pauseImg" class="control-icon" src="pause.png" alt="Pause">
+            <audio id="music" src="lofi.mp3" loop></audio>
+
+            <!-- Кнопки громкости -->
+            <img class="control-icon" src="volume_up.png" alt="Volume Up">
+            <img class="control-icon" src="volume_down.png" alt="Volume Down">
+        </div>
+        <div class="burger-menu">
+            <nav class="menu">
+                <ul>
+                    <li><a href="zakaz.html">Сделать заказ</a></li>
+                    <li><a href="projects.html">Наши проекты</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+            </nav>
+            <div class="burger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        </div>
+    
+    </header>
+    <main class="anketa-container">
+        <div class="banner-container">
+            <div class="catalog-imagee"></div>
+            <div class="bannere">
+                <h1 class="zoom">Анкета</h1>
+            </div>
+        </div>
+        <div class="error-message" id="errorMessage"></div>
+        <form class="anketa-form" id="userForm" onsubmit="return validateForm(event)">
+            <label for="firstName">Имя:</label>
+            <input type="text" id="firstName" name="firstName" title="Пожалуйста, введите корректное имя"required required pattern="[А-Яа-яЁё]+" title="Пожалуйста, введите корректное имя">
+
+            <label for="lastName">Фамилия:</label>
+            <input type="text" id="lastName" name="lastName" required pattern="[А-Яа-яЁё]+" title="Пожалуйста, введите корректную фамилию">
+
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+            <button onclick="checkAge()">Проверить возраст</button>
+            <p id="result"></p> 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required title="Пожалуйста, введите корректный email">
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required pattern="\+7\d{10}" placeholder="+7XXXXXXXXXX" title="Пожалуйста, введите корректный телефон">
+
+            <label for="fileInput">Прикрепить файл:</label>
+            <input type="file" id="fileInput" name="fileInput" required title="Пожалуйста, прикрепите файл">
+
+            <button type="submit">Готово</button>
+            <div id="totalAmount">Общая сумма: 0 руб.</div>
+            <div class="operation-message" id="operationMessage">Операция выполнена</div>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+            
+        </form>
+
+
+    </main>
+    <footer>
+        <div class="info-block">
+            <div class="social-icons">
+                <a href="https://vk.com/anilane_off" target="_blank">
+                    <img class="social-icon" src="vk.png" alt="VK">
+                </a>
+                <a href="https://t.me/AniLane_Off" target="_blank">
+                    <img class="social-icon" src="tg.png" alt="Telegram">
+                </a>
+                <a href="https://aniu.ru" target="_blank">
+                    <img class="social-icon" src="logo.svg" alt="Aniu">
+                </a>
+                <a href="https://www.youtube.com/@Anicrad" target="_blank">
+                    <img class="social-icon" src="youtube.png" alt="ютуб">
+                </a>
+                <a href="mailto:him4enko@yandex.ru" target="_blank">
+                    <img class="social-icon" src="mail.png" alt="почта">
+                </a>
+               
+            </div>
+            
+            <p>Номер тех.поддержки: <span class="phone-number" id="supportNumber"><a href="tel:+79067982025" id = "tel">8-906 798 20 25</a></span></p>
+        </div>
+    </footer>
+</body>
+</html>

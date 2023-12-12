@@ -1,0 +1,166 @@
+/* Общие стили формы */
+body {
+    margin: 0;
+    padding: 0;
+}
+.anketa-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для ваших полей формы */
+.anketa-form label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.anketa-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.anketa-form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+#totalAmount {
+    display: inline-block; /* Делаем блок общей суммы строчно-блочным элементом */
+    margin-left: 10px; /* Добавляем отступ слева от кнопки */
+    font-size: 14px; /* Размер шрифта общей суммы */
+}
+
+.anketa-form button:hover {
+    background-color: #45a049;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для формы */
+.anketa-form {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Дополнительные стили для почты и телефона */
+#email, #phone {
+    margin-bottom: 15px;
+}
+
+/* Стили для сообщений об ошибке */
+.error-message {
+    color: #ff0000;
+    margin-top: 5px;
+}
+
+/* Стили для успешного сообщения */
+.success-message {
+    color: #008000;
+    margin-top: 5px;
+}
+.operation-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background-color: rgba(0, 255, 0, 0.8); /* Зеленый полупрозрачный фон */
+    color: white;
+    border-radius: 10px;
+    display: none;
+    animation: fadeInOut 2s ease-in-out; /* Анимация плавного появления/исчезновения */
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+.banner-container {
+    max-width: 100%;
+    height: 50vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.catalog-imagee {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('banneranketa.jpg');
+    filter: blur(15px);
+}
+
+.bannere {
+    position: relative;
+    overflow: hidden; 
+    
+}
+
+.bannere h1,
+.bannere p {
+    font-family: 'Nunito', Arial, sans-serif;
+    color: #fff; /* Белый цвет */
+    font-size: 50px; /* Размер вашего текста */
+    transition: color 0.5s ease-in-out;
+    margin: 0; /* Убран отступ между текстовыми элементами */
+    padding: 20px; /* Отступы */
+    box-sizing: border-box; /* Учитываем отступы в общей ширине и высоте */
+}
+.bannere .zoom {
+    
+    font-size: 100px;
+    animation: zoom-animation 2s infinite alternate, color-change 2s infinite alternate; /* Обе анимации */
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+}
+
+@keyframes zoom-animation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes color-change {
+    from {
+        color: #fff; /* Начинаем с белого цвета */
+        text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+    }
+    to {
+        color: #ff0000; /* Заканчиваем красным цветом */
+        text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.9);
+    }
+}
