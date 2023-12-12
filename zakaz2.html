@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniLane</title>
+    <link rel="icon" href="anilane.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="buy.css">
+    <link rel="stylesheet" href="block1.css">
+    <link rel="stylesheet" href="phone.css">
+    <title>AniLane Озвучка</title>
+    <script src="scripts2.js"></script>
+    <script src="carticon.js"></script>
+    <script src="mainpage.js"></script>
+    <script src="burgermenu.js"></script>
+    <script src="numb.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="mainpage.html">
+                <img src="anilane.jpg" alt="Логотип">
+            </a>
+        </div>
+        <div class="music-controls">
+            <img id="playImg" class="control-icon" src="play.png" alt="Play">
+            <img id="pauseImg" class="control-icon" src="pause.png" alt="Pause">
+            <audio id="music" src="lofi.mp3" loop></audio>
+
+            <!-- Кнопки громкости -->
+            <img class="control-icon" src="volume_up.png" alt="Volume Up">
+            <img class="control-icon" src="volume_down.png" alt="Volume Down">
+        </div>
+        <div class = "header-container">
+        <div class="cart-container">
+            <div class="cart" onmouseover="showCartItems()" onmouseout="hideCartItems()">
+                <div class="cart-count">0</div>
+                <!-- Отображение названий добавленных продуктов и их количества в ряд -->
+                <div class="cart-items">
+                    <div id="cartItemsContainer">
+                        <div class="total" id="totalAmountElement">Общая сумма: 0 руб.</div>
+                    </div>
+                </div>
+                <img src="cart-icon.png" alt="Корзина" class="cart-icon">
+                <button class="buy-button" onclick="redirectToAnketa()">Купить</button>
+                <button class="clear-cart" onclick="clearCart()">
+                    <img src="trash-icon.png" alt="Clear Cart">
+                </button>
+            </div>
+        </div>
+        <div class="burger-menu">
+            <nav class="menu">
+                <ul>
+                    <li><a href="zakaz.html">Сделать заказ</a></li>
+                    <li><a href="projects.html">Наши проекты</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+            </nav>
+            <div class="burger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        </div>
+    
+    </header>
+    <main>
+
+    <section>
+        <div class="banner-container">
+            <img src="catalog.jpg" alt="Catalog Image" class="catalog-image">
+            <div class="banner-text">Продолжение следует...</div>
+        </div>
+        <div class="pagination">
+            <div class="arrow" onclick="navigateToPage('zakaz.html')">←</div>
+          </div>
+    </section>
+        
+    </main>
+    <footer>
+        <div class="info-block">
+            <div class="social-icons">
+                <a href="https://vk.com/anilane_off" target="_blank">
+                    <img class="social-icon" src="vk.png" alt="VK">
+                </a>
+                <a href="https://t.me/AniLane_Off" target="_blank">
+                    <img class="social-icon" src="tg.png" alt="Telegram">
+                </a>
+                <a href="https://aniu.ru" target="_blank">
+                    <img class="social-icon" src="logo.svg" alt="Aniu">
+                </a>
+                <a href="https://www.youtube.com/@Anicrad" target="_blank">
+                    <img class="social-icon" src="youtube.png" alt="ютуб">
+                </a>
+                <a href="mailto:him4enko@yandex.ru" target="_blank">
+                    <img class="social-icon" src="mail.png" alt="почта">
+                </a>
+               
+            </div>
+            
+            <p>Номер тех.поддержки: <span class="phone-number" id="supportNumber"><a href="tel:+79067982025" id = "tel">8-906 798 20 25</a></span></p>
+        </div>
+    </footer>
+</body>
+</html>

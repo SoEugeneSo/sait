@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniLane</title>
+    <link rel="icon" href="anilane.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="buy.css">
+    <link rel="stylesheet" href="block.css">
+    <link rel="stylesheet" href="phone.css">
+    <title>AniLane Озвучка</title>
+    <script src="scripts.js"></script>
+    <script src="carticon.js"></script>
+    <script src="mainpage.js"></script>
+    <script src="burgermenu.js"></script>
+    <script src="numb.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="mainpage.html">
+                <img src="anilane.jpg" alt="Логотип">
+            </a>
+        </div>
+        <div class="music-controls">
+            <img id="playImg" class="control-icon" src="play.png" alt="Play">
+            <img id="pauseImg" class="control-icon" src="pause.png" alt="Pause">
+            <audio id="music" src="lofi.mp3" loop></audio>
+
+            <!-- Кнопки громкости -->
+            <img class="control-icon" src="volume_up.png" alt="Volume Up">
+            <img class="control-icon" src="volume_down.png" alt="Volume Down">
+        </div>
+        <div class = "header-container">
+        <div class="cart-container">
+            <div class="cart" onmouseover="showCartItems()" onmouseout="hideCartItems()">
+                <div class="cart-count">0</div>
+                <!-- Отображение названий добавленных продуктов и их количества в ряд -->
+                <div class="cart-items">
+                    <div id="cartItemsContainer">
+                        <div class="total" id="totalAmountElement">Общая сумма: 0 руб.</div>
+                    </div>
+                </div>
+                <img src="cart-icon.png" alt="Корзина" class="cart-icon">
+                <button type="submit" class="buy-button" onclick="redirectToAnketa()">Купить</button>
+                <button class="clear-cart" onclick="clearCartAndReload()">
+                    <img src="trash-icon.png" alt="Clear Cart">
+                </button>
+            </div>
+        </div>
+        <div class="burger-menu">
+            <nav class="menu">
+                <ul>
+                    <li><a href="zakaz.html">Сделать заказ</a></li>
+                    <li><a href="projects.html">Наши проекты</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+            </nav>
+            <div class="burger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        </div>
+    
+    </header>
+    <main>
+        <div class="banner-container">
+            <img src="catalog.jpg" alt="Catalog Image" class="catalog-image">
+            <div class="banner-text">Каталог товаров</div>
+        </div>
+        <div class="products">
+            <!-- Ваши продукты здесь -->
+            <div class="product" data-id="1" data-name="Озвучка за минуту" data-price="100">
+                <img src="zakaz1.jpg" alt="Product 1">
+                <div class="product-details">
+                    <p>Озвучка за минуту</p>
+                    
+                    <button class="add" onclick="addToCart(1)" data-id="1">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(1)" data-id="1">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="2">
+                <img src="zakaz2.jpg" alt="Product 2">
+                <div class="product-details">
+                    <p>Озвучка фильма</p>
+                    <button class="add" onclick="addToCart(2)" data-id="2">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(2)" data-id="2">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="3">
+                <img src="zakaz3.jpg" alt="Product 3">
+                <div class="product-details">
+                    <p>Озвучка за 5 минут</p>
+                    <button class="add" onclick="addToCart(3)" data-id="3">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(3)" data-id="3">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="4">
+                <img src="zakaz4.jpg" alt="Product 1">
+                <div class="product-details">
+                    <p>Озвучка аниме 1 серия</p>
+                    <button class="add" onclick="addToCart(4)" data-id="4">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(4)" data-id="4">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="5">
+                <img src="zakaz5.jpg" alt="Product 5">
+                <div class="product-details">
+                    <p>Озвучка поздравления</p>
+                    <button class="add" onclick="addToCart(5)" data-id="5">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(5)" data-id="5">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="6">
+                <img src="zakaz6.jpg" alt="Product 6">
+                <div class="product-details">
+                    <p>Спеть песню</p>
+                    <button class="add" onclick="addToCart(6)" data-id="6">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(6)" data-id="6">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="7">
+                <img src="zakaz7.jpg" alt="Product 7">
+                <div class="product-details">
+                    <p>Звукорежиссёр на серию</p>
+                    <button class="add" onclick="addToCart(7)" data-id="7">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(7)" data-id="7">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="8">
+                <img src="zakaz8.jpg" alt="Product 8">
+                <div class="product-details">
+                    <p>Заказ аниме на сезон</p>
+                    <button class="add" onclick="addToCart(8)" data-id="8">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(8)" data-id="8">Убрать</button>
+                </div>
+            </div>
+            <div class="product" data-id="9">
+                <img src="zakaz9.jpg" alt="Product 9">
+                <div class="product-details">
+                    <p>Запись аудиокниги, 1 глава</p>
+                    <button class="add" onclick="addToCart(9)" data-id="9">Добавить</button>
+                    <span class="product-quantity">0</span>
+                    <button class="remove" onclick="removeFromCart(9)" data-id="9">Убрать</button>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <div class="page-number" onclick="scrollToTop()">1</div>
+            <div class="arrow" onclick="navigateToPageRight('zakaz2.html')">→</div>
+          </div>
+        
+    </main>
+    <footer>
+        <div class="info-block">
+            <div class="social-icons">
+                <a href="https://vk.com/anilane_off" target="_blank">
+                    <img class="social-icon" src="vk.png" alt="VK">
+                </a>
+                <a href="https://t.me/AniLane_Off" target="_blank">
+                    <img class="social-icon" src="tg.png" alt="Telegram">
+                </a>
+                <a href="https://aniu.ru" target="_blank">
+                    <img class="social-icon" src="logo.svg" alt="Aniu">
+                </a>
+                <a href="https://www.youtube.com/@Anicrad" target="_blank">
+                    <img class="social-icon" src="youtube.png" alt="ютуб">
+                </a>
+                <a href="mailto:him4enko@yandex.ru" target="_blank">
+                    <img class="social-icon" src="mail.png" alt="почта">
+                </a>
+               
+            </div>
+            
+            <p>Номер тех.поддержки: <span class="phone-number" id="supportNumber"><a href="tel:+79067982025" id = "tel">8-906 798 20 25</a></span></p>
+        </div>
+    </footer>
+</body>
+</html>

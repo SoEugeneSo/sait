@@ -1,0 +1,378 @@
+body {
+    margin: 0;
+    font-family: 'Nunito', Arial, sans-serif;
+    background: #ff8b8b;
+}
+html {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.custom-text {
+    font-family: 'Nunito', Times;
+}
+.music-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Добавлен отступ от иконки бургера */
+}
+.banner {
+    max-width: 100%;  /* Поля вокруг содержимого баннера */
+    height: 50vh;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    font-family: 'Nunito', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.banner p {
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.banner:hover h1,
+.banner:hover p {
+    opacity: 1;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px);
+    z-index: -1;
+    transition: filter 0.5s ease-in-out;
+}
+
+.banner:hover::before {
+    filter: blur(15px);
+}
+
+/* Стили для аудиоплеера */
+audio {
+    display: none; /* Скрыть аудиоплеер по умолчанию */
+}
+
+/* Стили для изображений кнопок Play и Pause */
+#playImg,
+#pauseImg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#playImg {
+    display: block;
+}
+
+#pauseImg {
+    display: none;
+}
+.control-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.volume-controls {
+    margin-right: px; /* Добавлен отступ от иконки бургера */
+}
+
+/* Стили для изображений кнопок громкости */
+.volume-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+.logo img {
+    max-width: 50px; /* Установите максимальную ширину изображения по вашему усмотрению */
+    height: auto; /* Сохраняйте соотношение сторон */
+}
+
+
+.burger-menu {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute; /* Изменено на fixed */
+    top: 85px;
+    right: 10px;
+    background-color: #333;
+    width: 100%;
+    display: none;
+    z-index: 1;
+    font-family: 'Nunito', times;
+    font-size: 20px;
+    max-width: calc(100% - 20px); /* Добавлено */
+    overflow-x: hidden; /* Добавлено */
+}
+
+.menu.active {
+    display: flex;
+}
+
+.burger-icon {
+    font-size:40px;
+    color: #000000;
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    transition: 0.4s;
+}
+
+.burger-menu.active .burger-icon:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active .burger-icon:nth-child(2) {
+    opacity: 0.3;
+}
+
+.burger-menu.active .burger-icon:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+.burger-icon::before {
+    content: "\2261"; /* Юникод для символа "☰" */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Добавлено выравнивание текста вправо */
+}
+
+.menu li {
+    margin: 0;
+    padding: 15px;
+    text-align: right; /* Добавлено выравнивание текста вправо */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ffd700;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+.menu.active + .overlay {
+    display: block;
+}
+
+.content {
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    padding: 2em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.info-block {
+    text-align: center;
+    display: flex; /* Добавлено свойство для .info-block */
+    align-items: center; /* Выравнивание элементов внутри .info-block */
+    gap: 10px; /* Отступ между элементами внутри .info-block */
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#dubbers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dubber-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin: 10px;
+}
+
+.dubber-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+
+.dubber-container p {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-family: 'Comfortaa', Arial, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    z-index: 1;
+    mix-blend-mode: screen;
+    transition: color 1.5s, transform 1.5s;
+}
+.hover-text {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff;
+    background: #ffb8b87e;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Nunito', Arial, sans-serif;
+    font-size: 1.3em;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.dubber-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+    pointer-events: none;
+}
+
+.dubber-container:hover::before {
+    border: 2px solid #00f;
+}
+
+
+.dubber-container:hover img {
+    transform: scale(1.5);
+    filter: blur(7px);
+}
+
+.dubber-container:hover p {
+    animation: riseAndText 0.5s forwards, colorChange 2s infinite alternate;
+}
+
+.dubber-container:hover .hover-text {
+    opacity: 1;
+}
+.dubber-container:not(:hover) .hover-text {
+    transition: opacity 0.0s ease-in-out; /* Время завершения анимации при снятии курсора */
+    opacity: 0; /* Значение прозрачности при снятии курсора */
+}
+
+@keyframes riseAndText {
+    to {
+        transform: translate(-50%, -270%);
+    }
+}
+
+@keyframes colorChange {
+    from {
+        color: rgb(234, 234, 234);
+    }
+    to {
+        color: rgb(192, 34, 34);
+    }
+}

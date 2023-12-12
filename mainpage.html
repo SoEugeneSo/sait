@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="up.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniLane</title>
+    <link rel="icon" href="anilane.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="buttonreturn.css">
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="phone.css">
+    <title>AniLane Озвучка</title>
+    <script src="numb.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="mainpage.html">
+                <img src="anilane.jpg" alt="Логотип">
+            </a>
+        </div>
+        <div class="music-controls">
+            <img id="playImg" class="control-icon" src="play.png" alt="Play">
+            <img id="pauseImg" class="control-icon" src="pause.png" alt="Pause">
+            <audio id="music" src="lofi.mp3" loop></audio>
+            <!-- Кнопки громкости -->
+            <img class="control-icon" src="volume_up.png" alt="Volume Up">
+            <img class="control-icon" src="volume_down.png" alt="Volume Down">
+        </div>
+        <div class="burger-menu">
+            <nav class="menu">
+                <ul>
+                    <li><a href="zakaz.html">Сделать заказ</a></li>
+                    <li><a href="projects.html">Наши проекты</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+            </nav>
+            <div class="burger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <h1 class = "custom-text">Добро пожаловать на сайт AniLane!</h1>
+            <p class = "custom-text">Изучай наш прекрасный сайт. Здесь ты сможешь заказать озвучку, в зависимости от конкретных правил. Найдёшь озвученные нами проекты, а также сможешь узнать побольше о нашем персонале.</p>
+        </div>
+        <section id="dubbers">
+            <div class="dubber-container" id="dubber1">
+                <img src="avatar1.jpg" alt="Аватар 1">
+                <p>Озвучка</p>
+                <span class="hover-text">Мы самая лучшая, молодая и перспективная команда, которая постоянно озвучивает аниме новинки</span>
+            </div>
+            <div class="dubber-container" id="dubber2">
+                <img src="avatar2.jpg" alt="Аватар 2" >
+                <p>Скорость</p>
+                <span class="hover-text">Очень быстро делаем своё дело. При выходе долгожданных новинок, не приходится ждать озвучки</span>
+            </div>
+            <div class="dubber-container" id="dubber3">
+                <img src="avatar3.jpg" alt="Аватар 3">
+                <p>Счастье</p>
+                <span class="hover-text">С нами только весёлые моменты! Приятного прослушивания!</span>
+            </div>
+            <div id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">
+                <img src="arrow-up.png" alt="Scroll to Top">
+            </div>
+    </main>
+    <footer>
+        <div class="info-block">
+            <div class="social-icons">
+                <a href="https://vk.com/anilane_off" target="_blank">
+                    <img class="social-icon" src="vk.png" alt="VK">
+                </a>
+                <a href="https://t.me/AniLane_Off" target="_blank">
+                    <img class="social-icon" src="tg.png" alt="Telegram">
+                </a>
+                <a href="https://aniu.ru" target="_blank">
+                    <img class="social-icon" src="logo.svg" alt="Aniu">
+                </a>
+                <a href="https://www.youtube.com/@Anicrad" target="_blank">
+                    <img class="social-icon" src="youtube.png" alt="ютуб">
+                </a>
+                <a href="mailto:him4enko@yandex.ru" target="_blank">
+                    <img class="social-icon" src="mail.png" alt="почта">
+                </a>
+               
+            </div>
+            
+            <p>Номер тех.поддержки: <span class="phone-number" id="supportNumber"><a href="tel:+79067982025" id = "tel">8-906 798 20 25</a></span></p>
+        </div>
+    </footer>
+    <script src="mainpage.js"></script>
+    <script src="burgermenu.js"></script>
+    <script src="buttonreturn.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>
