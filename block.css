@@ -1,0 +1,75 @@
+.banner-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.catalog-image {
+    width: 100%;
+    height: auto;
+    opacity: 80%;
+    filter: blur(8px); /* Начальный блюр */
+    transition: filter 0.5s ease-in-out;
+    animation: blurAnimation 4s infinite alternate
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Comfortaa', Arial, sans-serif;
+    transform: translate(-50%, -50%);
+    font-size: 90px;
+    font-weight: bold;
+    text-shadow: 2px 10px 10px #000000; 
+    color: #ffffff; /* Начальный цвет текста */
+    animation: pulseAnimation 2s infinite alternate, scaleAnimation 2s infinite alternate;
+}
+
+@keyframes pulseAnimation {
+    0% {
+        color: #ffffff; /* Белый цвет */
+    }
+    100% {
+        color: #ff0000; /* Красный цвет */
+    }
+}
+
+@keyframes blurAnimation {
+    0% {
+        filter: blur(14px); /* Начальный блюр */
+    }
+    100% {
+        filter: blur(7px); /* Без блюра */
+    }
+}
+@keyframes scaleAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1); /* Изначальный масштаб */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.1); /* Увеличенный масштаб */
+    }
+}
+.pagination {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+  }
+  
+  .page-number, .arrow {
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .arrow {
+    background-color: #2ecc71;
+  }

@@ -1,0 +1,17 @@
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    background-color: #ff000038; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.scroll-to-top-btn img {
+    width: 20px;
+    height: 20px;
+}
